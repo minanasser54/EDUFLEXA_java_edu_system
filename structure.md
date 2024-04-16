@@ -1,6 +1,10 @@
-Eduflexa   online course store
-flexability > esacpe timing 
-no timing  > only complete courses 
+# Eduflexa   
+"Online Course Store"
+# Features
+1- flexability > "esacpe timing" 
+2- no timing  > "only complete courses" 
+
+# Project Structure   "will be Replaced by UML"
 3 classes interface abstraction
 {accounts (types)- courses - quizes - mentors }
 abstract user (name - email - password - img - getters - setters - gender -  )
