@@ -1,5 +1,6 @@
 package accounts;
 
+
 public abstract class User {
     private int id;    //auto fetched from json and created by increasing last of json
     private String username;
