@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Zyad",
+            "request": "launch",
+            "mainClass": "Zyad",
+            "projectName": "EDUFLEXA_c68c77b3"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

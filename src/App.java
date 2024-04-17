@@ -7,6 +7,6 @@ public class App {
         Mentor mina = Mentor.createMentor(0, "mina", "mina@gmail.com", "123", "male");
         System.out.println(mina.toString());
         System.out.println(nasser.toString());
-        
+        System.out.println("Zyad magdy");
     }
 }
