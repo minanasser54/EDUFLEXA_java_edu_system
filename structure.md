@@ -30,7 +30,7 @@ imgs videos     >>  static"for site" dynamic"user"  resources
 
 
 TASKS [
-    1 exeception  >  "مهمته لو طلع ايرور يبقي امه رقاصه "
+    1 exeception  > 
     1 java fx  >   
     classes  كلنا          
     deadline   
