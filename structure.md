@@ -7,18 +7,17 @@
 # Project Structure   "will be Replaced by UML"
 3 classes interface abstraction
 {accounts (types)- courses - quizes - mentors }
-abstract user (name - email - password - img - getters - setters - gender -  )
-                mentor( courses[] - students[]  )
-                student(id - enrolled_courses[] )
+abstract user (id - username - email - password - "img" - getters - setters - gender - Role)
+                mentor( courses[] )
+                student( enrolled_courses[] )
                 staff (function on database (add , remove ,update ))
         course (title - price - duration - content"-1-string" -  chapters[] -students[] - published - complete)
         chapter(lessons [], title ,quiz[] )
         lesson()
         quiz(question[], duration - grade )
 interfaces (
-    comparbale > sorting 
-    enrolable  "check that course is "published" and complete" impelemented by course
-    is_mentor "check user has at least 1 course "   implemented by user  "only can create course"
+    +comparbale > sorting 
+    enrolable  "check that course is "published " impelemented by course
     )
 
 1 exception handling

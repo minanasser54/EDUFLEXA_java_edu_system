@@ -7,6 +7,7 @@ public class Mentor extends User {
     }
     public static Mentor createMentor(int id, String username, String email, String password, String gender){
         Mentor mentor = new Mentor(id, username, email, password, gender);
+        AccountsUtility.addUser(mentor);
         return mentor;
     }
     @Override

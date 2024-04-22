@@ -2,7 +2,7 @@ package accounts;
 
 
 public abstract class User {
-    private int id;    //auto fetched from json and created by increasing last of json
+    private int id;    
     private String username;
     private String email;
     private String password;
@@ -62,6 +62,12 @@ public abstract class User {
     @Override
     public String toString(){
         return (
-            "username: "+this.username+"\nEmail:  "+this.email+"\nRole: "+this.role);
+        "<user>"+
+        ((Integer)this.id).toString()+"$"+
+        this.username+"$"+
+        this.email+"$"+
+        this.password+"$"+
+        this.gender+"$"+
+        this.role +"</user>\n");
     }
 }

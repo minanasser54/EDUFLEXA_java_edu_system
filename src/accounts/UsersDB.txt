@@ -1,0 +1,4 @@
+<user>1$nasser$nasser@gmail.com$123$male$MENTOR</user>
+<user>0$mina$mina@gmail.com$123$male$MENTOR</user>
+<user>2$alfons$alfons@gmail.com$123$male$MENTOR</user>
+<user>3$zoz$zoz@gmail.com$123$male$STUDENT</user>
