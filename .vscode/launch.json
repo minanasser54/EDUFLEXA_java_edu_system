@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "s",
+            "request": "launch",
+            "mainClass": "accounts.s",
+            "projectName": "EDUFLEXA_89480b02"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "EDUFLEXA_89480b02"
+        },
+        {
+            "type": "java",
             "name": "Zyad",
             "request": "launch",
             "mainClass": "Zyad",

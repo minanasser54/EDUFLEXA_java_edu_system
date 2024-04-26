@@ -6,7 +6,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class AccountsUtility {
+public class AccountsUtility
+{
     public static void addUser(User user){
         try (FileWriter fw1 = new FileWriter("src/accounts/UsersDB.txt",true)) {
             fw1.write(user.toString());
