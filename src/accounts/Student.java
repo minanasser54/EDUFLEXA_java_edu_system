@@ -1,10 +1,9 @@
 package accounts;
-
+import Material.Courses; 
 import java.util.ArrayList;
 
-public class Student extends User implements Courses {
+public class Student extends User  {
 
-    ArrayList<Courses> enrolled_courses   = new ArrayList<Courses>();
 
 
     public Student(int id, String username, String email, String password, String gender) {
@@ -17,48 +16,28 @@ public class Student extends User implements Courses {
 
 
 
-    public void enrollment (String coursename)
+    public void enroll (Courses c)
     {
-        int course_index;
-        
-        try 
-        {
-            course_index = title.indexOf(coursename);
-            for(int count = 0 ; count<100 ; count++)
-            {
-                if (Students [course_index][count] == null )
-                {
-                    Students [course_index][count] = this.getUsername();
-                    break;
-                }
-             
-            }
-        }
-        catch (Exception ex)
-        {
-            System.out.println(coursename+ " is Not Valid Course");
-        
-        }
+        c.setStudents(this.getUsername());
+
     }
 
-    public ArrayList<String> std_enroll_what ()
+    public ArrayList<String> Student_Courses (ArrayList<Courses> c)
     {
-        ArrayList<String> courses = new ArrayList<String>();
-
-        for (int i = 0 ; i<100 ; i++)
+        ArrayList<String> s = new ArrayList<String>();
+        
+        for (int i = 0 ; i<c.size() ; i++)
         {
-            for (int j = 0 ; j<100 ; j++)
+            for (int j = 0 ; j<c.get(i).getnumbers_Students() ; j++)
             {
-                if (Students[i][j] == this.getUsername())
+                if (c.get(i).getStudents_name(j) == this.getUsername())
                 {
-                    courses.add(title.get(i));
+                    s.add(c.get(i).getTitle());
                 }
 
             }
         }
-        return courses;
-
-
+        return s;
     }
 
 
