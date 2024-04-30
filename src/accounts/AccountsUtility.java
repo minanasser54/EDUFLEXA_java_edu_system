@@ -54,4 +54,10 @@ public class AccountsUtility
             return new Student(Integer.parseInt(id), usrn, email, password, gender);
         }
     }
+    public static Mentor createMentor(int id, String username, String email, String password, String gender){
+        Mentor mentor = new Mentor(id, username, email, password, gender);
+        AccountsUtility.addUser(mentor);
+        return mentor;
+    }
+
 }
