@@ -116,6 +116,8 @@
             </Text>
             <ListView fx:id="Available_Courses" layoutX="444.0" layoutY="208.0" prefHeight="254.0" prefWidth="242.0" />
             <Button fx:id="Add" layoutX="530.0" layoutY="485.0" mnemonicParsing="false" onMouseClicked="#AddCourses" prefHeight="26.0" prefWidth="70.0" text="Show" />
+            <Button fx:id="Remove" layoutX="128.0" layoutY="485.0" mnemonicParsing="false" onMouseClicked="#RemoveCourse" prefHeight="26.0" prefWidth="70.0" text="Remove" visible="false" />
+            <Button fx:id="Finish" layoutX="317.0" layoutY="498.0" mnemonicParsing="false" onMouseClicked="#Finish" prefHeight="43.0" prefWidth="82.0" text="Finish" visible="false" />
          </children>
     </AnchorPane>
   </children>

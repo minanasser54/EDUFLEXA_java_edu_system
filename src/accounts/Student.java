@@ -19,6 +19,9 @@ public class Student extends User  {
     public static int getNo_students() {
         return no_students;
     }
+
+
+
     public ArrayList<Course> getFinishedcourses() {
         return finishedcourses;
     }
