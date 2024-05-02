@@ -21,11 +21,6 @@ public class Student extends User  {
     }
 
 
-    public void setEnrolledcourses(Course c) {                // added by me
-        this.enrolledcourses.add(c);
-    }
-
-
 
     public ArrayList<Course> getFinishedcourses() {
         return finishedcourses;

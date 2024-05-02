@@ -42,8 +42,8 @@ public class Init {
     public  void set_Init_Students() {
          
         students.add(zoz);
-        zoz.setEnrolledcourses(Dynamics);
-        zoz.setEnrolledcourses(Thermal);
+        enrolledcourses.add(Dynamics);
+        enrolledcourses.add(Thermal);
 
         students.add(alfons);
         students.add(mustafa);
@@ -69,6 +69,9 @@ public class Init {
         enrolledcourses.add(c);
     }
 
+    public static void removeEnrolledcourses(Course c) {
+        enrolledcourses.remove(c);
+    }
 
 
 

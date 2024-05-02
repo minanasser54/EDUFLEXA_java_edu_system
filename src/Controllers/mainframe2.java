@@ -61,7 +61,6 @@ public class mainframe2 {
 
     @FXML
     void RemoveCourse(MouseEvent event) throws InterruptedException {
-        ClickCount += event.getClickCount();
         if (ClickCount == 1)
         {
         }
@@ -69,8 +68,23 @@ public class mainframe2 {
         {
             int selectID = Courses_Enrolled.getSelectionModel().getSelectedIndex();
             System.out.println(selectID);
-            Courses_Enrolled.getItems().remove(selectID);
-          
+
+            for (int i = 0 ; i<Init.enrolledcourses.size() ; i++)
+            {            
+                if ((Init.enrolledcourses.get(i).getTitle() ).equals(Courses_Enrolled.getItems().get(selectID)) )
+                {
+                    Init.removeEnrolledcourses(Init.enrolledcourses.get(i));          //Remove it from Courses enrolledcourses in the Init
+                    break;
+                }
+     
+            }  
+
+            
+            Courses_Enrolled.getItems().remove(selectID);          //Remove it from Courses Courses_Enrolled in the Window
+            System.out.println("==================================");
+            System.out.println(Init.enrolledcourses);
+
+
         }
     }
 
@@ -78,9 +92,8 @@ public class mainframe2 {
 
     @FXML
     void AddCourses(MouseEvent event) {
-      
-
         ClickCount += event.getClickCount();
+
         if (ClickCount == 1)
         {
             Remove.setVisible(true);
@@ -95,9 +108,9 @@ public class mainframe2 {
                 System.out.println("===================================");
             }
             
-            for(int j = 0 ; j<Init.students.get(Init.accessed_student_index).getEnrolledcourses().size() ; j++)   //print what student have enrolled before
+            for(int j = 0 ; j<Init.enrolledcourses.size() ; j++)   //print what student have enrolled before
             {
-                Courses_Enrolled.getItems().add(Init.students.get(Init.accessed_student_index).getEnrolledcourses().get(j).getTitle()); 
+                Courses_Enrolled.getItems().add(Init.enrolledcourses.get(j).getTitle()); 
             }
 
             Add.setText("Add");
