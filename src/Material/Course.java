@@ -5,10 +5,8 @@ import accounts.Mentor;
 import accounts.Student;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 
 public class Course implements Comparable<Course>, enrolable {
-
     static int no_courses = 0;
     private String title;
     private Mentor owner;
@@ -128,7 +126,7 @@ public class Course implements Comparable<Course>, enrolable {
         this.chapters.add(c);
         c.setCourse(this);
     }
-
+    
     public void addChapters(ArrayList<Chapter> c) {
         this.chapters.addAll(c);
         for (Chapter chapter : c) {
