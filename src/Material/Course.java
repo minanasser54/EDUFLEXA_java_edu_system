@@ -9,6 +9,8 @@ import java.util.Iterator;
 
 public class Course implements Comparable<Course>, enrolable {
 
+    public static int index_selector;
+
     static int no_courses = 0;
     private String title;
     private Mentor owner;
@@ -17,7 +19,7 @@ public class Course implements Comparable<Course>, enrolable {
     private int week_duration;
     private String outcomes;
     private ArrayList<Chapter> chapters = new ArrayList<Chapter>();
-    private ArrayList<Student> students = new ArrayList<Student>();
+    public static ArrayList<Student> students = new ArrayList<Student>();
     private boolean published;
 
     public Course(String title, Mentor owner, int price, int week_duration, String Outcomes) {
@@ -44,7 +46,7 @@ public class Course implements Comparable<Course>, enrolable {
         this.published = x;
     }
 
-    public int studentsCount() {
+    public static int studentsCount() {
         return students.size();
     }
 
@@ -111,6 +113,9 @@ public class Course implements Comparable<Course>, enrolable {
     public static void setNo_courses(int no_courses) {
         Course.no_courses = no_courses;
     }
+    public static void setStudents(ArrayList<Student> students) {
+        Course.students = students;
+    }
 
     public Chapter getChapter(String title) {
         Chapter c = null;
@@ -155,7 +160,7 @@ public class Course implements Comparable<Course>, enrolable {
 
                 break;
             case 's':
-                Collections.sort(innercourses, Comparator.comparing(Course::studentsCount));
+                //Collections.sort(innercourses, Comparator.comparing(Course::studentsCount));
                 break;
 
             default:

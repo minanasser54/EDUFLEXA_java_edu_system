@@ -3,7 +3,10 @@ import Material.Course;
 import java.util.ArrayList;
 
 public class Student extends User  {
-    private ArrayList<Course> enrolledcourses=new ArrayList<Course>();
+    public static  ArrayList<Course> enrolledcourses=new ArrayList<Course>();
+
+    public static  ArrayList<Course> Availablecourses=new ArrayList<Course>();
+
     private ArrayList<Course> finishedcourses=new ArrayList<Course>();
     static int no_students;
     
@@ -34,5 +37,17 @@ public class Student extends User  {
     public String toString(){
         return super.toString();
     }
+
+
+
+
+    public static  void getCourses(ArrayList<Course> c) {
+        Student.Availablecourses = c;
+    }
+
+    public static  void setEnrolledcourses(Course c) {
+        enrolledcourses.add(c);
+    }
+
     
 }
