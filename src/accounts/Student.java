@@ -19,6 +19,14 @@ public class Student extends User  {
     public static int getNo_students() {
         return no_students;
     }
+
+
+    public void setEnrolledcourses(Course c) {                // added by me
+        this.enrolledcourses.add(c);
+    }
+
+
+
     public ArrayList<Course> getFinishedcourses() {
         return finishedcourses;
     }
