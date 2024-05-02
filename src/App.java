@@ -1,14 +1,94 @@
+
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 //import accounts.AccountsUtility;
+=======
+>>>>>>> c2b9b873e85b4a5e9f8751351ded87dd2583a424
 import Material.Chapter;
 import Material.Course;
-import Material.Lesson;
+import Utility.Init;
 import accounts.Mentor;
 import accounts.Student;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-public class App {
+
+
+public class App extends Application {
+
+        @Override
+        public void start(Stage primaryStage) throws Exception {
+           try
+           {
+           
+            FXMLLoader fxmloader = new FXMLLoader(getClass().getResource("fxml/mainframe.fxml"));
+            Parent root = fxmloader.load();
+            Scene  scene = new Scene(root);
+    
+            primaryStage.setTitle("first Scene");
+            primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
+            primaryStage.show();
+    
+           }catch(Exception e)
+           {
+            e.printStackTrace();
+    
+           }
+    
+    
+           Stage secondStage = new Stage();
+           primaryStage.setOnHidden(event -> {
+            try {
+                // Open the second scene in a new stage when the primary stage is closed 
+                FXMLLoader fxmloader1 = new FXMLLoader(getClass().getResource("fxml/mainframe1.fxml"));
+                Parent root1 = fxmloader1.load();
+                Scene scene1 = new Scene(root1);
+                secondStage.setTitle("Second Scene");
+                secondStage.setScene(scene1);
+                secondStage.setResizable(false);
+                secondStage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+    
+        });
+    
+    
+    
+            Stage ThirdStage = new Stage();
+            secondStage.setOnHidden(event -> {
+                try {
+                    // Open the second scene in a new stage when the primary stage is closed
+                    FXMLLoader fxmloader2 = new FXMLLoader(getClass().getResource("fxml/mainframe2.fxml"));
+                    Parent root2 = fxmloader2.load();
+                    Scene scene2 = new Scene(root2);
+                    ThirdStage.setTitle("Third Scene");
+                    ThirdStage.setScene(scene2);
+                    ThirdStage.setResizable(false);
+                    ThirdStage.show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+    
+        });
+
+    
+        }
+        
+
+
+   
     public static void main(String[] args) throws Exception {
+       
+        /* 
+       
+       
+       
         Mentor nosser = new Mentor(0, "mina Nasser", "nosser@gmail.com", "123", "male");
         System.out.println(nosser.toString());
         System.out.println("=============================");
@@ -54,6 +134,8 @@ public class App {
         zoz.complete(python);
         zoz.complete(java);
 
+
+        
         // System.out.println(zoz.getFinishedcourses());
         // System.out.println("=============================");
         // courses = Course.sortCourses(courses, 't');
@@ -66,5 +148,19 @@ public class App {
         // System.out.println(courses);
         // courses = Course.sortCourses(courses, 's');
         // System.out.println(courses);
+
+
+
+*/
+
+        
+        Init I = new Init();
+
+        I.set_Init_Students();
+        I.set_Init_Courses();
+
+
+        launch(args);
     }
+
 }
