@@ -39,9 +39,8 @@ public class Init {
         students.add(mustafa);
         students.add(ashraf);
 
-        //zoz.getEnrolledcourses().add(Fields);
-        Fields.enroll(zoz);
-        Math1.enroll(zoz);
+        //Fields.enroll(zoz);
+        //Math1.enroll(zoz);
 
     }
 
@@ -55,6 +54,7 @@ public class Init {
         Availablecourses.add(Thermal);
         Availablecourses.add(Fields);
         Availablecourses.add(Math2);
+
         for (Course course : Availablecourses) {
             course.setPublished(true);
         }
