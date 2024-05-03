@@ -11,7 +11,7 @@ public class Init {
 
     Mentor nosser = new Mentor(0, "mina Nasser", "nosser@gmail.com", "123", "male");
 
-    Student zoz     = new Student(1, "zyad magdy", "zoz@gmail.com", "123", "male");
+    Student zoz     = new Student(1, "zyad magdy", "as", "123", "male");
     Student alfons  = new Student(2, "mina antony", "alfons@gmail.com", "456", "male");
     Student mustafa = new Student(3, "mustafa hamada", "mustafa@gmail.com", "789", "male");
     Student ashraf  = new Student(4, "ahmed ashraf", "ashraf@gmail.com", "1122", "male");

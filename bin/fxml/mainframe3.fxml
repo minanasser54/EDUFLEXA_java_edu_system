@@ -36,9 +36,10 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -46,7 +47,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="537.0" prefWidth="722.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.mainframe1">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.mainframe3">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -87,32 +88,53 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="0.0" prefWidth="591.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="482.0" prefWidth="698.0" VBox.vgrow="ALWAYS">
       <children>
-            <ImageView fitHeight="66.0" fitWidth="307.0" pickOnBounds="true" preserveRatio="true">
+            <Text layoutX="43.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="124.5367431640625">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <TextField fx:id="UserName" layoutX="429.0" layoutY="107.0" prefHeight="38.0" prefWidth="175.0" promptText="Enter unique Username" />
+            <ImageView fitHeight="48.0" fitWidth="272.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../LOGO.png" />
                </image>
             </ImageView>
-            <Text layoutX="14.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name" textAlignment="CENTER" wrappingWidth="194.13671875">
+            <Text layoutX="43.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="124.5367431640625">
                <font>
-                  <Font size="30.0" />
+                  <Font size="26.0" />
                </font>
             </Text>
-            <TextField fx:id="usernameField" layoutX="283.0" layoutY="73.0" prefHeight="40.0" prefWidth="230.0" />
-            <Text layoutX="14.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" textAlignment="CENTER" wrappingWidth="194.13671875">
+            <TextField fx:id="email" layoutX="429.0" layoutY="162.0" prefHeight="38.0" prefWidth="175.0" promptText="name@email.com" />
+            <Text layoutX="43.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="124.5367431640625">
                <font>
-                  <Font size="30.0" />
+                  <Font size="26.0" />
                </font>
             </Text>
-            <Button layoutX="410.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#Enter" prefHeight="15.0" prefWidth="94.0" text="OK" />
-            <Button fx:id="Sign_up" layoutX="466.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#NewAccount" prefHeight="26.0" prefWidth="155.0" text="Sign up" />
-            <Text layoutX="-24.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New to EDUFLEXA" textAlignment="CENTER" wrappingWidth="307.0">
+            <TextField fx:id="Password" layoutX="429.0" layoutY="218.0" prefHeight="38.0" prefWidth="175.0" promptText="Create Password" />
+            <Text fill="#001eff" layoutX="429.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign up" wrappingWidth="124.5367431640625">
                <font>
-                  <Font size="30.0" />
+                  <Font name="Arial Italic" size="29.0" />
                </font>
             </Text>
-            <PasswordField fx:id="HiddenPassword" layoutX="283.0" layoutY="125.0" prefHeight="40.0" prefWidth="230.0" />
+            <Text layoutX="343.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Learn on your own time  " textAlignment="CENTER" wrappingWidth="295.9999877929688">
+               <font>
+                  <Font name="Arial Italic" size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="Join" layoutX="545.0" layoutY="307.0" mnemonicParsing="false" onMouseClicked="#Add_new_Student" prefHeight="26.0" prefWidth="58.0" text="Join" />
+            <Text fx:id="ExistedAccountMessage" fill="#ff0101" layoutX="14.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Looks like you already have an account with that Name or email address. Please log in instead." visible="false" wrappingWidth="437.336669921875">
+               <font>
+                  <Font name="Arial Italic" size="20.0" />
+               </font>
+            </Text>
+            <RadioButton fx:id="Male" layoutX="443.0" layoutY="269.0" mnemonicParsing="false" text="Male">
+               <toggleGroup>
+                  <ToggleGroup fx:id="Gender" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="Female" layoutX="535.0" layoutY="269.0" mnemonicParsing="false" text="Female" toggleGroup="$Gender" />
       </children>
     </AnchorPane>
   </children>

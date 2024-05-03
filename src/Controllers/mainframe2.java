@@ -3,9 +3,7 @@ package Controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import Material.Course;
 import Utility.Init;
-import accounts.Student;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -50,12 +48,17 @@ public class mainframe2 {
 
 
     @FXML
+    
     void Finish(MouseEvent event) {
 
 
         Node source = (Node) event.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
+
+        mainframe1.S = stage;
+
         stage.close();
+
 
     }
 
@@ -81,7 +84,9 @@ public class mainframe2 {
             
             Courses_Enrolled.getItems().remove(selectID);          //Remove it from Courses Courses_Enrolled in the Window
             System.out.println("==================================");
+            System.out.println("Student "+Init.students.get(Init.accessed_student_index).getUsername()+" Has Enorlled The Following Courses");
             System.out.println(Init.students.get(Init.accessed_student_index).getEnrolledcourses());
+            System.out.println("==================================");
 
 
         }
@@ -132,8 +137,10 @@ public class mainframe2 {
             }            
         }
         System.out.println("=====================================");
+        System.out.println("Student "+Init.students.get(Init.accessed_student_index).getUsername()+" Has Enorlled The Following Courses");
         System.out.println(Init.students.get(Init.accessed_student_index).getEnrolledcourses());
-       
+        System.out.println("=====================================");
+
 
     }
 
