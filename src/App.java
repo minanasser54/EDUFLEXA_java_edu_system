@@ -1,10 +1,12 @@
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import Material.Chapter;
 import Material.Course;
+=======
+
+>>>>>>> 9a30aaa9f256f9cc5d26550c615f7f19ce7f5487
 import Utility.Init;
-import accounts.Mentor;
-import accounts.Student;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,6 +16,8 @@ import javafx.stage.Stage;
 
 
 public class App extends Application {
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         @Override
         public void start(Stage primaryStage) throws Exception {
@@ -34,10 +38,13 @@ public class App extends Application {
             e.printStackTrace();
     
            }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    
-           Stage secondStage = new Stage();
-           primaryStage.setOnHidden(event -> {
+/////////////////////////               Login Stage             //////////////////////////////////////////////////////////////
+
+    Stage secondStage = new Stage();
+    primaryStage.setOnHidden(event -> 
+    {
             try {
                 // Open the second scene in a new stage when the primary stage is closed 
                 FXMLLoader fxmloader1 = new FXMLLoader(getClass().getResource("fxml/mainframe1.fxml"));
@@ -51,12 +58,16 @@ public class App extends Application {
                 e.printStackTrace();
             }
     
-        });
+    });
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////               Add Courses Stage             //////////////////////////////////////////////////////
     
     
-    
-            Stage ThirdStage = new Stage();
-            secondStage.setOnHidden(event -> {
+    Stage ThirdStage = new Stage();
+    secondStage.setOnHidden(event -> 
+    {
                 try {
                     // Open the second scene in a new stage when the primary stage is closed
                     FXMLLoader fxmloader2 = new FXMLLoader(getClass().getResource("fxml/mainframe2.fxml"));
@@ -70,8 +81,9 @@ public class App extends Application {
                     e.printStackTrace();
                 }
     
-        });
-
+    });
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
         }
         

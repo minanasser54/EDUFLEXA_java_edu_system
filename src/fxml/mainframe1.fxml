@@ -46,7 +46,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.mainframe1">
+<VBox prefHeight="537.0" prefWidth="722.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.mainframe1">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -87,7 +87,7 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="0.0" prefWidth="591.0" VBox.vgrow="ALWAYS">
       <children>
             <ImageView fitHeight="66.0" fitWidth="307.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -106,8 +106,8 @@
                </font>
             </Text>
             <Button layoutX="410.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#Enter" prefHeight="15.0" prefWidth="94.0" text="OK" />
-            <Button layoutX="457.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#NewAccount" prefHeight="26.0" prefWidth="155.0" text="Sign up" />
-            <Text layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New to EDUFLEXA" textAlignment="CENTER" wrappingWidth="307.0">
+            <Button fx:id="Sign_up" layoutX="466.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#NewAccount" prefHeight="26.0" prefWidth="155.0" text="Sign up" />
+            <Text layoutX="-24.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New to EDUFLEXA" textAlignment="CENTER" wrappingWidth="307.0">
                <font>
                   <Font size="30.0" />
                </font>

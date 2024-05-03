@@ -7,6 +7,8 @@ import accounts.Mentor;
 import accounts.Student;
 
 public class Init {
+
+
     Mentor nosser = new Mentor(0, "mina Nasser", "nosser@gmail.com", "123", "male");
 
     Student zoz     = new Student(1, "zyad magdy", "zoz@gmail.com", "123", "male");
@@ -24,10 +26,17 @@ public class Init {
     Course Fields   = new Course("MASTER Fields", nosser, 500, 4, "you will be a ninja");
     Course Math2    = new Course("MASTER Math2", nosser, 500, 4, "you will be a ninja");
 
+<<<<<<< HEAD
     public static int accessed_student_index;
     public static  ArrayList<Course> Availablecourses   = new ArrayList<Course>();
     public static  ArrayList<Student> students          = new ArrayList<Student>();
     public static  ArrayList<Course> enrolledcourses    = new ArrayList<Course>();
+=======
+
+    public static  int                accessed_student_index;
+    public static  ArrayList<Course>  Availablecourses   = new ArrayList<Course>();
+    public static  ArrayList<Student> students           = new ArrayList<Student>();
+>>>>>>> 9a30aaa9f256f9cc5d26550c615f7f19ce7f5487
 
 
     public  void set_Init_Students() {
@@ -36,6 +45,10 @@ public class Init {
         students.add(alfons);
         students.add(mustafa);
         students.add(ashraf);
+
+        zoz.setEnrolledcourses(Fields);
+        zoz.setEnrolledcourses(Math1);
+
     }
 
     public   void set_Init_Courses() {
@@ -51,13 +64,7 @@ public class Init {
 
 
 
-    public static void setEnrolledcourses(Course c) {
-        enrolledcourses.add(c);
-    }
-
-
  
-
 
 
 
