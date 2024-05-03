@@ -9,14 +9,15 @@
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
+            ,"vmArgs": "--module-path F:/programfiles/javafx-sdk-23/lib  --add-modules javafx.controls,javafx.fxml",
+
         },
         {
             "type": "java",
             "name": "App",
             "request": "launch",
-            "vmArgs": "--module-path D:/javafx-sdk-23/javafx-sdk-23/lib --add-modules javafx.controls,javafx.fxml",
             "mainClass": "App",
-            "projectName": "EDUFLEXA_2aba6c37"
+            "projectName": "EDUFLEXA_58cfe161"
         }
     ]
 }

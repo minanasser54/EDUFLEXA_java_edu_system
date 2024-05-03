@@ -13,8 +13,6 @@ public class Init {
     Student alfons  = new Student(2, "mina antony", "alfons@gmail.com", "456", "male");
     Student mustafa = new Student(3, "mustafa hamada", "mustafa@gmail.com", "789", "male");
     Student ashraf  = new Student(4, "ahmed ashraf", "ashraf@gmail.com", "1122", "male");
-
-
     
     Course java     = new Course("MASTER JAVA", nosser, 1200, 6, "you will be a ninja");
     Course python   = new Course("MASTER Python", nosser, 300, 4, "you will be a ninja");
@@ -26,17 +24,10 @@ public class Init {
     Course Fields   = new Course("MASTER Fields", nosser, 500, 4, "you will be a ninja");
     Course Math2    = new Course("MASTER Math2", nosser, 500, 4, "you will be a ninja");
 
-
     public static int accessed_student_index;
     public static  ArrayList<Course> Availablecourses   = new ArrayList<Course>();
     public static  ArrayList<Student> students          = new ArrayList<Student>();
     public static  ArrayList<Course> enrolledcourses    = new ArrayList<Course>();
-
-
-
-
-   
-
 
 
     public  void set_Init_Students() {
@@ -47,8 +38,6 @@ public class Init {
         students.add(ashraf);
     }
 
-
-  
     public   void set_Init_Courses() {
         Availablecourses.add(java);
         Availablecourses.add(python);

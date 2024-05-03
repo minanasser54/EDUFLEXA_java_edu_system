@@ -1,10 +1,5 @@
 
 import java.util.ArrayList;
-
-<<<<<<< HEAD
-//import accounts.AccountsUtility;
-=======
->>>>>>> c2b9b873e85b4a5e9f8751351ded87dd2583a424
 import Material.Chapter;
 import Material.Course;
 import Utility.Init;
