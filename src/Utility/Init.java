@@ -9,12 +9,12 @@ import accounts.Student;
 public class Init {
 
 
-    Mentor nosser = new Mentor(0, "mina Nasser", "nosser@gmail.com", "123", "male");
+    Mentor nosser = new Mentor(0, "mina Nasser", "nosser@gmail.com", "1234", "male");
 
-    Student zoz     = new Student(1, "zyad magdy", "zoz@gmail.com", "123", "male");
-    Student alfons  = new Student(2, "mina antony", "alfons@gmail.com", "456", "male");
-    Student mustafa = new Student(3, "mustafa hamada", "mustafa@gmail.com", "789", "male");
-    Student ashraf  = new Student(4, "ahmed ashraf", "ashraf@gmail.com", "1122", "male");
+    Student zoz     = new Student(1, "zyad magdy", "zoz@gmail.com", "1334", "male");
+    Student alfons  = new Student(2, "mina antony", "alfons@gmail.com", "1456", "male");
+    Student mustafa = new Student(3, "mustafa hamada", "mustafa@gmail.com", "1789", "male");
+    Student ashraf  = new Student(4, "ahmed ashraf", "ashraf@gmail.com", "1322", "male");
     
     Course java     = new Course("MASTER JAVA", nosser, 1200, 6, "you will be a ninja");
     Course python   = new Course("MASTER Python", nosser, 300, 4, "you will be a ninja");
