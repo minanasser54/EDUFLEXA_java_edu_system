@@ -3,9 +3,7 @@ package Controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import Material.Course;
 import Utility.Init;
-import accounts.Student;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -50,12 +48,17 @@ public class mainframe2 {
 
 
     @FXML
+    
     void Finish(MouseEvent event) {
 
 
         Node source = (Node) event.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
+
+        mainframe1.S = stage;
+
         stage.close();
+
 
     }
 
@@ -67,22 +70,23 @@ public class mainframe2 {
         else
         {
             int selectID = Courses_Enrolled.getSelectionModel().getSelectedIndex();
-            System.out.println(selectID);
 
-            for (int i = 0 ; i<Init.enrolledcourses.size() ; i++)
+            for (int i = 0 ; i<Init.students.get(Init.accessed_student_index).getNo_Courses() ; i++)
             {            
-                if ((Init.enrolledcourses.get(i).getTitle() ).equals(Courses_Enrolled.getItems().get(selectID)) )
+                if ((Init.students.get(Init.accessed_student_index).getEnrolledcourses().get(i).getTitle() ).equals(Courses_Enrolled.getItems().get(selectID)) )
                 {
-                    Init.removeEnrolledcourses(Init.enrolledcourses.get(i));          //Remove it from Courses enrolledcourses in the Init
+                    Init.students.get(Init.accessed_student_index).removeEnrolledcourses(Init.students.get(Init.accessed_student_index).getEnrolledcourses().get(i));
+
+                    //Remove it from Courses enrolledcourses in the Init
                     break;
                 }
-     
-            }  
-
+            }
             
             Courses_Enrolled.getItems().remove(selectID);          //Remove it from Courses Courses_Enrolled in the Window
             System.out.println("==================================");
-            System.out.println(Init.enrolledcourses);
+            System.out.println("Student "+Init.students.get(Init.accessed_student_index).getUsername()+" Has Enorlled The Following Courses");
+            System.out.println(Init.students.get(Init.accessed_student_index).getEnrolledcourses());
+            System.out.println("==================================");
 
 
         }
@@ -101,16 +105,16 @@ public class mainframe2 {
             Name.setText(Init.students.get(Init.accessed_student_index).getUsername());
             Email.setText(Init.students.get(Init.accessed_student_index).getEmail());
 
-            for(int i =0 ; i<Init.Availablecourses.size() ; i++)
+            for(int i =0 ; i<Init.Availablecourses.size() ; i++)                                        // print The Init Primary Courses
             {
                 System.out.println(Init.Availablecourses.get(i).getTitle());
                 Available_Courses.getItems().add(Init.Availablecourses.get(i).getTitle());
                 System.out.println("===================================");
             }
             
-            for(int j = 0 ; j<Init.enrolledcourses.size() ; j++)   //print what student have enrolled before
+            for(int j = 0 ; j<Init.students.get(Init.accessed_student_index).getNo_Courses() ; j++)   //print what student have enrolled before
             {
-                Courses_Enrolled.getItems().add(Init.enrolledcourses.get(j).getTitle()); 
+                Courses_Enrolled.getItems().add(Init.students.get(Init.accessed_student_index).getEnrolledcourses().get(j).getTitle()); 
             }
 
             Add.setText("Add");
@@ -118,21 +122,25 @@ public class mainframe2 {
         else
         {
             int selectID = Available_Courses.getSelectionModel().getSelectedIndex();
-            Courses_Enrolled.getItems().add(Init.Availablecourses.get(selectID).getTitle());   // add The selected Course from list in Enrolledcourses in Init 
+            Courses_Enrolled.getItems().add(Init.Availablecourses.get(selectID).getTitle());   
+
+            // add The selected Course from list in Available_Courses to Courses_Enrolled 
 
             for (int i = 0 ; i<Init.Availablecourses.size() ; i++)
             {            
                 if ((Init.Availablecourses.get(i).getTitle() ).equals(Init.Availablecourses.get(selectID).getTitle()) )
                 {
-                    Init.setEnrolledcourses(Init.Availablecourses.get(i));
+                    Init.students.get(Init.accessed_student_index).setEnrolledcourses(Init.Availablecourses.get(i));
                     break;
                 }
      
             }            
         }
         System.out.println("=====================================");
-        System.out.println(Init.enrolledcourses);
-       
+        System.out.println("Student "+Init.students.get(Init.accessed_student_index).getUsername()+" Has Enorlled The Following Courses");
+        System.out.println(Init.students.get(Init.accessed_student_index).getEnrolledcourses());
+        System.out.println("=====================================");
+
 
     }
 
