@@ -179,8 +179,17 @@ public class Course implements Comparable<Course>, enrolable {
         if (this.getPublished() == true) {
             this.getStudents().add(s);
             s.getEnrolledcourses().add(this);
+            System.out.println("done2");
         }
     }
+    @Override
+    public void unenroll(Student s) {
+        if (this.getPublished() == true) {
+            this.getStudents().remove(s);
+            s.getEnrolledcourses().remove(this);
+        }
+    }
+    
 
     @Override
     public String toString() {

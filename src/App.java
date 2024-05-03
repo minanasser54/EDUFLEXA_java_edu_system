@@ -1,11 +1,4 @@
 
-<<<<<<< HEAD
-import java.util.ArrayList;
-import Material.Chapter;
-import Material.Course;
-=======
-
->>>>>>> 9a30aaa9f256f9cc5d26550c615f7f19ce7f5487
 import Utility.Init;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

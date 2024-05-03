@@ -75,6 +75,8 @@ public class mainframe2 {
             {            
                 if ((Init.students.get(Init.accessed_student_index).getEnrolledcourses().get(i).getTitle() ).equals(Courses_Enrolled.getItems().get(selectID)) )
                 {
+                    //.getEnrolledcourses().remove(());
+                   // Init.students.get(Init.accessed_student_index).getEnrolledcourses().get(i).unenroll(Init.students.get(Init.accessed_student_index));
                     Init.students.get(Init.accessed_student_index).removeEnrolledcourses(Init.students.get(Init.accessed_student_index).getEnrolledcourses().get(i));
 
                     //Remove it from Courses enrolledcourses in the Init
@@ -111,8 +113,8 @@ public class mainframe2 {
                 Available_Courses.getItems().add(Init.Availablecourses.get(i).getTitle());
                 System.out.println("===================================");
             }
-            
-            for(int j = 0 ; j<Init.students.get(Init.accessed_student_index).getNo_Courses() ; j++)   //print what student have enrolled before
+            System.out.println(Init.students.get(Init.accessed_student_index).getNo_Courses());
+            for(int j = 0 ; j<(Init.students.get(Init.accessed_student_index).getNo_Courses()) ; j++)   //print what student have enrolled before
             {
                 Courses_Enrolled.getItems().add(Init.students.get(Init.accessed_student_index).getEnrolledcourses().get(j).getTitle()); 
             }
@@ -130,7 +132,9 @@ public class mainframe2 {
             {            
                 if ((Init.Availablecourses.get(i).getTitle() ).equals(Init.Availablecourses.get(selectID).getTitle()) )
                 {
+                   // Init.students.get(Init.accessed_student_index).getEnrolledcourses().get(i).enroll(Init.students.get(Init.accessed_student_index));
                     Init.students.get(Init.accessed_student_index).setEnrolledcourses(Init.Availablecourses.get(i));
+                    //Init.students.get(Init.accessed_student_index).setEnrolledcourses(Init.Availablecourses.get(i));
                     break;
                 }
      

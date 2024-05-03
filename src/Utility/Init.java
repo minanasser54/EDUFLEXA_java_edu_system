@@ -26,17 +26,10 @@ public class Init {
     Course Fields   = new Course("MASTER Fields", nosser, 500, 4, "you will be a ninja");
     Course Math2    = new Course("MASTER Math2", nosser, 500, 4, "you will be a ninja");
 
-<<<<<<< HEAD
-    public static int accessed_student_index;
-    public static  ArrayList<Course> Availablecourses   = new ArrayList<Course>();
-    public static  ArrayList<Student> students          = new ArrayList<Student>();
-    public static  ArrayList<Course> enrolledcourses    = new ArrayList<Course>();
-=======
 
     public static  int                accessed_student_index;
     public static  ArrayList<Course>  Availablecourses   = new ArrayList<Course>();
     public static  ArrayList<Student> students           = new ArrayList<Student>();
->>>>>>> 9a30aaa9f256f9cc5d26550c615f7f19ce7f5487
 
 
     public  void set_Init_Students() {
@@ -46,12 +39,14 @@ public class Init {
         students.add(mustafa);
         students.add(ashraf);
 
-        zoz.setEnrolledcourses(Fields);
-        zoz.setEnrolledcourses(Math1);
+        //zoz.getEnrolledcourses().add(Fields);
+        Fields.enroll(zoz);
+        Math1.enroll(zoz);
 
     }
 
     public   void set_Init_Courses() {
+        
         Availablecourses.add(java);
         Availablecourses.add(python);
         Availablecourses.add(Math1);
@@ -60,6 +55,10 @@ public class Init {
         Availablecourses.add(Thermal);
         Availablecourses.add(Fields);
         Availablecourses.add(Math2);
+        for (Course course : Availablecourses) {
+            course.setPublished(true);
+        }
+        
     }
 
 

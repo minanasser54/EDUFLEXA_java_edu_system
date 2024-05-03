@@ -23,12 +23,13 @@ public class Student extends User  {
 
 
     public void setEnrolledcourses(Course c) {                // added by me
-        this.enrolledcourses.add(c);
+        c.enroll(this);
+        System.out.println("done");
     }
 
     
     public void removeEnrolledcourses(Course c) {                // added by me
-        this.enrolledcourses.remove(c);
+        c.unenroll(this);
     }
 
       
@@ -41,6 +42,7 @@ public class Student extends User  {
     public ArrayList<Course> getFinishedcourses() {
         return finishedcourses;
     }
+
     public void complete(Course c){
         try {
             int x=getEnrolledcourses().indexOf(c);
