@@ -9,14 +9,23 @@ public class Chapter {
     private Course course;
 
     public Chapter(String title) {
+        if (title == null || title.isEmpty()) {
+            throw new IllegalArgumentException("Title cannot be null or empty");
+        }
         this.title = title;
     }
 
     public ArrayList<Lesson> getLessons() {
+        if (lessons == null) {
+            throw new NullPointerException("Lessons is not initialized");
+        }
         return lessons;
     }
 
     public ArrayList<Quiz> getQuizs() {
+        if (quizs == null) {
+            throw new NullPointerException("Quizzes is not initialized");
+        }
         return quizs;
     }
 
@@ -37,35 +46,60 @@ public class Chapter {
     }
 
     public void addLesson(String text, String url) {
-        Lesson e = new Lesson(text, url, this);
-        lessons.add(e);
+        try {
+            Lesson e = new Lesson(text, url, this);
+            lessons.add(e);
+        } catch (NullPointerException en) {
+            System.out.println("Lessons is not initialized");
+        }
     }
 
     public void dropLesson(Lesson e) {
-        lessons.remove(e);
+        try {
+            lessons.remove(e);
+        } catch (NullPointerException en) {
+            System.out.println("Lessons is not initialized");
+        }
     }
 
     public void updateLesson(String text, String url, Lesson e) {
-        Lesson ne = new Lesson(text, url, this);
-        lessons.add(lessons.indexOf(e), ne);
-        lessons.remove(e);
+        try {
+            Lesson ne = new Lesson(text, url, this);
+            lessons.add(lessons.indexOf(e), ne);
+            lessons.remove(e);
+        } catch (NullPointerException en) {
+            System.out.println("Lessons is not initialized");
+        } catch (IndexOutOfBoundsException en) {
+            System.out.println("Lesson is not found in the list");
+        }
     }
 
     public void addQuiz() {
-        Quiz q = new Quiz(this);
-        quizs.add(q);
+        try {
+            Quiz q = new Quiz(this);
+            quizs.add(q);
+        } catch (NullPointerException en) {
+            System.out.println("Quizzes is not initialized");
+        }
     }
 
     public void dropQuiz(Quiz e) {
-        quizs.remove(e);
+        try {
+            quizs.remove(e);
+        } catch (NullPointerException en) {
+            System.out.println("Quizzes is not initialized");
+        }
     }
 
     @Override
     public String toString() {
-        return ("Chapter: " + this.title + "\n" +
-                "Lessons: " + this.lessons.size() + "\n" +
-                "Quizes: " + this.quizs.size() + "\n" +
-
-                "");
+        try {
+            return ("Chapter: " + this.title + "\n" +
+                    "Lessons: " + this.lessons.size() + "\n" +
+                    "Quizes: " + this.quizs.size() + "\n");
+        } catch (NullPointerException en) {
+            System.out.println("Some properties are not initialized");
+            return null;
+        }
     }
 }

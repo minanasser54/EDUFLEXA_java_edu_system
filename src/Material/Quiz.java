@@ -6,27 +6,40 @@ public class Quiz {
     private int quiz_num;
     private Chapter chapter;
     private Course course;
-    private ArrayList<String> questions = new ArrayList<String>();
-    private ArrayList<String> answers = new ArrayList<String>();
+    private ArrayList<String> questions;
+    private ArrayList<String> answers;
 
     public Quiz(Chapter c) {
-        this.chapter = c;
-        course = c.getCourse();
         try {
+            this.chapter = c;
+            course = c.getCourse();
             quiz_num = c.getQuizs().indexOf(c.getQuizs().getLast()) + 1;
-        } catch (Exception e) {
+            this.questions = new ArrayList<String>();
+            this.answers = new ArrayList<String>();
+        } catch (NullPointerException e) {
+            System.out.println("Chapter is not initialized");
             quiz_num = 1;
         }
     }
 
     public void addQuestion(String question, String answer) {
-        this.questions.add(question);
-        this.answers.add(answer);
+        try {
+            this.questions.add(question);
+            this.answers.add(answer);
+        } catch (NullPointerException e) {
+            System.out.println("Questions or answers is not initialized");
+        }
     }
 
     public void dropQuestion(int i) {
-        this.questions.remove(i);
-        this.answers.remove(i);
+        try {
+            this.questions.remove(i);
+            this.answers.remove(i);
+        } catch (NullPointerException e) {
+            System.out.println("Questions or answers is not initialized");
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Index is out of bounds");
+        }
     }
 
     public ArrayList<String> getQuestions() {
