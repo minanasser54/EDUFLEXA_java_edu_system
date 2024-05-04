@@ -9,17 +9,17 @@ import accounts.Student;
 public class Init {
 
 
-    Mentor nosser = new Mentor(0, "mina Nasser", "mina@gmail.com", "123", "male");
-    Mentor Nasser = new Mentor(0, "Nasser mina", "Nasser@gmail.com", "456", "male");
-    Mentor ashraf1 = new Mentor(0, "ashraf ahmed", "ashraf@gmail.com", "789", "male");
+    Mentor nosser = new Mentor(0, "mina Nasser", "mina@gmail.com", "177823", "male");
+    Mentor Nasser = new Mentor(0, "Nasser mina", "Nasser@gmail.com", "4554676", "male");
+    Mentor ashraf1 = new Mentor(0, "ashraf ahmed", "ashraf@gmail.com", "787569", "male");
     Mentor antony = new Mentor(0, "antony mina", "antony@gmail.com", "101122", "male");
 
 
 
-    Student zoz     = new Student(1, "zyad magdy", "zoz@gmail.com", "123", "male");
-    Student alfons  = new Student(2, "mina antony", "alfons@gmail.com", "456", "male");
-    Student mustafa = new Student(3, "mustafa hamada", "mustafa@gmail.com", "789", "male");
-    Student ashraf  = new Student(4, "ahmed ashraf", "ashraf@gmail.com", "1122", "male");
+    Student zoz     = new Student(1, "zyad magdy", "zoz@gmail.com", "86657", "male");
+    Student alfons  = new Student(2, "mina antony", "alfons@gmail.com", "446756", "male");
+    Student mustafa = new Student(3, "mustafa hamada", "mustafa@gmail.com", "787789", "male");
+    Student ashraf  = new Student(4, "ahmed ashraf", "ashraf@gmail.com", "115522", "male");
 
 
     

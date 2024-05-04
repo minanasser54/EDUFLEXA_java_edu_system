@@ -165,14 +165,16 @@
             </Text>
             <TextField fx:id="Quiz_Answers" layoutX="463.0" layoutY="574.0" promptText="Answers" />
             <Button fx:id="Btn_Quiz" layoutX="542.0" layoutY="610.0" mnemonicParsing="false" onMouseClicked="#Add_Quiz" prefHeight="26.0" prefWidth="63.0" text="Add" />
-            <ChoiceBox fx:id="Select_Chapter" layoutX="356.0" layoutY="474.0" prefWidth="150.0" />
+            <ChoiceBox fx:id="Select_Chapter" layoutX="356.0" layoutY="474.0" onMouseClicked="#Change_Lesson_Quiz_List" prefWidth="150.0" />
             <Button fx:id="Btn_Course" layoutX="246.0" layoutY="371.0" mnemonicParsing="false" onMouseClicked="#Add_Course" prefHeight="26.0" prefWidth="206.0" text="Add" />
-            <ChoiceBox fx:id="Select_Course" layoutX="573.0" layoutY="371.0" prefWidth="150.0" />
+            <ChoiceBox fx:id="Select_Course" layoutX="573.0" layoutY="371.0" onMouseClicked="#Change_Chapter_List" prefWidth="150.0" />
             <Button fx:id="Btn_Chapter_remove" layoutX="756.0" layoutY="370.0" mnemonicParsing="false" onMouseClicked="#Chapter_remove" prefHeight="26.0" prefWidth="63.0" text="Remove" />
             <TextField fx:id="Lesson_Text" layoutX="230.0" layoutY="533.0" promptText="Text" />
             <TextField fx:id="Quiz_Questions" layoutX="463.0" layoutY="533.0" promptText="Questions" />
             <Button fx:id="Btn_Lesson1" layoutX="229.0" layoutY="647.0" mnemonicParsing="false" onMouseClicked="#Remove_Lesson" prefHeight="26.0" prefWidth="63.0" text="Remove" />
             <Button fx:id="Btn_Lesson2" layoutX="541.0" layoutY="645.0" mnemonicParsing="false" onMouseClicked="#Remove_Quiz" prefHeight="26.0" prefWidth="63.0" text="Remove" />
+            <Text layoutX="526.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Courses" />
+            <Text layoutX="300.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chapters" />
       </children>
     </AnchorPane>
   </children>

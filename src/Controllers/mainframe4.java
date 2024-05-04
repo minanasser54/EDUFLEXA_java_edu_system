@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -130,19 +131,14 @@ public class mainframe4 {
     void Add_chapter(MouseEvent event) {
 
 
-        Chapter_List.getItems().clear();
 
         String s     = Select_Course.getValue();
-        int    index = Init.Availablecourses.size() -1;
+        int    index = 0;
         for(int i = 0 ; i<Init.Availablecourses.size() ; i++ )
         {
             if (Init.Availablecourses.get(i).getTitle().equals(s)) 
             {
                 index = i;
-                for(int j = 0 ; j<Init.Availablecourses.get(index).getChapters().size() ; j++ )
-                {
-                    Chapter_List.getItems().add(Init.Availablecourses.get(index).getChapters().get(j).getTitle());
-                }
                 break;
             }
         }   
@@ -164,7 +160,7 @@ public class mainframe4 {
         /* ############ Specify The selected Course From ChoiceBox Course ############ */
 
         String s     = Select_Course.getValue();
-        int    index = Init.Availablecourses.size() -1;
+        int    index = 0;
         for(int i = 0 ; i<Init.Availablecourses.size() ; i++ )
         {
             if (Init.Availablecourses.get(i).getTitle().equals(s)) 
@@ -203,7 +199,7 @@ public class mainframe4 {
 
          /* ############ Specify The selected Course From ChoiceBox Course ############ */
          String s     = Select_Course.getValue();
-         int    index = Init.Availablecourses.size() -1;
+         int    index = 0;
 
          for(int i = 0 ; i<Init.Availablecourses.size() ; i++ )
          {
@@ -253,7 +249,7 @@ public class mainframe4 {
 
          /* ############ Specify The selected Course From ChoiceBox Course ############ */
          String s     = Select_Chapter.getValue();
-         int    index = Init.Availablecourses.size() -1;
+         int    index = 0;
 
          for(int i = 0 ; i<Init.Availablecourses.size() ; i++ )
          {
@@ -276,7 +272,7 @@ public class mainframe4 {
         {
             if ( (  Init.Availablecourses.get(index).getChapters().get(j).getTitle()   ).equals(s)) 
             {
-                Init.Availablecourses.get(index).getChapters().get(j).addQuiz(Quiz_Questions.getText(),Quiz_Answers.getText()); 
+                Init.Availablecourses.get(index).getChapters().get(j).addQuiz(Quiz_Questions.getText(),Quiz_Answers.getText()); //each Quiz Take one Questions and one Answers
                 break;
             }
         }
@@ -303,7 +299,7 @@ public class mainframe4 {
          /* ############ Specify The selected Course From ChoiceBox Course ############ */
 
          String s     = Select_Course.getValue();
-         int    index1 = Init.Availablecourses.size() -1;
+         int    index1 = 0;
 
          for(int i = 0 ; i<Init.Availablecourses.size() ; i++ )
          {
@@ -321,7 +317,7 @@ public class mainframe4 {
         /* ############ Specify The selected Chapter From ChoiceBox chapter ############ */
 
         s   = Select_Chapter.getValue();
-        int    index2 = Init.Availablecourses.size() -1;
+        int    index2 = 0;
 
         for(int j = 0 ; j<Init.Availablecourses.get(index1).getChapters().size() ; j++ )
         {
@@ -372,7 +368,7 @@ public class mainframe4 {
          /* ############ Specify The selected Course From ChoiceBox Course ############ */
 
          String s     = Select_Course.getValue();
-         int    index1 = Init.Availablecourses.size() -1;
+         int    index1 = 0;
 
          for(int i = 0 ; i<Init.Availablecourses.size() ; i++ )
          {
@@ -390,7 +386,7 @@ public class mainframe4 {
         /* ############ Specify The selected Chapter From ChoiceBox chapter ############ */
 
         s   = Select_Chapter.getValue();
-        int    index2 = Init.Availablecourses.size() -1;
+        int    index2 = 0;
 
         for(int j = 0 ; j<Init.Availablecourses.get(index1).getChapters().size() ; j++ )
         {
@@ -411,14 +407,11 @@ public class mainframe4 {
 
         String Q = s.substring(10, s.indexOf('$')-1);
         String A = s.substring(s.indexOf('$')+9, s.length());
-        System.out.println(s);
-        System.out.println(Q);
-        System.out.println(A);
 
 
         for(int v = 0 ; v<Init.Availablecourses.get(index1).getChapters().get(index2).getQuizs().size() ; v++ )
         {
-            for(int r = 0 ; r<Init.Availablecourses.get(index1).getChapters().get(index2).getQuizs().size() ; r++ )
+            for(int r = 0 ; r<Init.Availablecourses.get(index1).getChapters().get(index2).getQuizs().get(v).getQuestions().size() ; r++ )
 
             {
                 if ( (  Init.Availablecourses.get(index1).getChapters().get(index2).getQuizs().get(v).getQuestions().get(r)   ).equals(Q) && 
@@ -436,8 +429,88 @@ public class mainframe4 {
     }
 
 
+    @FXML
+    void Change_Chapter_List(MouseEvent event) {
+
+        Select_Course.setOnAction(e -> 
+        {
+                Chapter_List.getItems().clear();
+
+                String s     = Select_Course.getValue();
+                int    index = 0;
+                for(int i = 0 ; i<Init.Availablecourses.size() ; i++ )
+                {
+                    if (Init.Availablecourses.get(i).getTitle().equals(s)) 
+                    {
+                        index = i;
+                        for(int j = 0 ; j<Init.Availablecourses.get(index).getChapters().size() ; j++ )
+                        {
+                            Chapter_List.getItems().add(Init.Availablecourses.get(index).getChapters().get(j).getTitle());
+                        }
+                        break;
+                    }
+                }   
+        });
+       
+
+    }
+
+    @FXML
+    void Change_Lesson_Quiz_List(MouseEvent event) {
+
+        Select_Chapter.setOnAction(e -> 
+        {
+                Lesson_List.getItems().clear();
+                Quiz_List.getItems().clear();
 
 
+
+                        
+                String s     = Select_Course.getValue();
+                int    index1 = 0;
+                for(int i = 0 ; i<Init.Availablecourses.size() ; i++ )
+                {
+                    if (Init.Availablecourses.get(i).getTitle().equals(s)) 
+                    {
+                        index1 = i;
+                        break;
+                    }
+                }  
+
+
+                
+
+                s     = Select_Chapter.getValue();
+                int    index2 = 0;
+                for(int i = 0 ; i<Init.Availablecourses.get(index1).getChapters().size() ; i++ )
+                {
+                    if ((Init.Availablecourses.get(index1).getChapters().get(i).getTitle()).equals(s)) 
+                    {
+                        
+                        index2 = i;
+                        for(int j = 0 ; j<Init.Availablecourses.get(index1).getChapters().get(index2).getLessons().size() ; j++ )
+                        {
+                            String txt = Init.Availablecourses.get(index1).getChapters().get(index2).getLessons().get(j).getText();
+                            String url = Init.Availablecourses.get(index1).getChapters().get(index2).getLessons().get(j).getVideo_url();
+                            
+                            Lesson_List.getItems().add("Text: " + txt + " $Video URL: "+  url);
+
+                        }
+                        for(int u = 0 ; u<Init.Availablecourses.get(index1).getChapters().get(index2).getQuizs().size() ; u++ )
+                        {
+                                String Q = Init.Availablecourses.get(index1).getChapters().get(index2).getQuizs().get(u).getQuestions().get(0);
+                                String A = Init.Availablecourses.get(index1).getChapters().get(index2).getQuizs().get(u).getAnswers().get(0);                           
+                                Quiz_List.getItems().add("Question: " + Q  + " $Answer: "+  A);
+                        }
+
+
+                        break;
+                    }
+                }   
+        });
+       
+
+    }
 
 
     @FXML
