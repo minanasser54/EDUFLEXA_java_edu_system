@@ -6,18 +6,17 @@ public class Quiz {
     private int quiz_num;
     private Chapter chapter;
     private Course course;
-    private ArrayList<String> questions;
-    private ArrayList<String> answers;
+    private ArrayList<String> questions  = new ArrayList<String>();
+    private ArrayList<String> answers    = new ArrayList<String>();
 
-    public Quiz(String Q , String A,Chapter c) {
+    public Quiz(Chapter c) {
         try {
-            this.questions.add(Q);                         
-            this.answers.add(A);   
+
+
             this.chapter = c;
             course = c.getCourse();
-            quiz_num = c.getQuizs().indexOf(c.getQuizs().getLast()) + 1;
-            this.questions = new ArrayList<String>();
-            this.answers = new ArrayList<String>();
+            //quiz_num = c.getQuizs().indexOf(c.getQuizs().getLast()) + 1;          // When I Switch in Chapter Listview , It got stuck here
+  
         } catch (NullPointerException e) {
             System.out.println("Chapter is not initialized");
             quiz_num = 1;

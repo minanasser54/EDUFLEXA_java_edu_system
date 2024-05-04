@@ -248,7 +248,7 @@ public class mainframe4 {
     void Add_Quiz(MouseEvent event) {
 
          /* ############ Specify The selected Course From ChoiceBox Course ############ */
-         String s     = Select_Chapter.getValue();
+         String s     = Select_Course.getValue();
          int    index = 0;
 
          for(int i = 0 ; i<Init.Availablecourses.size() ; i++ )
@@ -272,7 +272,7 @@ public class mainframe4 {
         {
             if ( (  Init.Availablecourses.get(index).getChapters().get(j).getTitle()   ).equals(s)) 
             {
-                Init.Availablecourses.get(index).getChapters().get(j).addQuiz(Quiz_Questions.getText(),Quiz_Answers.getText()); //each Quiz Take one Questions and one Answers
+                Init.Availablecourses.get(index).getChapters().get(j).addQuiz(Quiz_Questions.getText(),Quiz_Answers.getText()); //each Quiz Take one Question and one Answer
                 break;
             }
         }
@@ -494,15 +494,16 @@ public class mainframe4 {
                             String url = Init.Availablecourses.get(index1).getChapters().get(index2).getLessons().get(j).getVideo_url();
                             
                             Lesson_List.getItems().add("Text: " + txt + " $Video URL: "+  url);
-
+ 
                         }
+
+
                         for(int u = 0 ; u<Init.Availablecourses.get(index1).getChapters().get(index2).getQuizs().size() ; u++ )
                         {
                                 String Q = Init.Availablecourses.get(index1).getChapters().get(index2).getQuizs().get(u).getQuestions().get(0);
                                 String A = Init.Availablecourses.get(index1).getChapters().get(index2).getQuizs().get(u).getAnswers().get(0);                           
                                 Quiz_List.getItems().add("Question: " + Q  + " $Answer: "+  A);
                         }
-
 
                         break;
                     }
@@ -526,16 +527,18 @@ public class mainframe4 {
             {
                 System.out.println( Init.Availablecourses.get(v).getChapters().get(i).toString());
 
-                System.out.println("======================        LESSONS                      ======================");
-                System.out.println("==============================================================================");
+                
                 for(int j = 0 ; j<Init.Availablecourses.get(v).getChapters().get(i).getLessons().size() ; j++ )
                 {
+                    System.out.println("======================        LESSONS                      ======================");
+                    System.out.println("==============================================================================");
                     System.out.println( Init.Availablecourses.get(v).getChapters().get(i).getLessons().get(j).toString());
                 }
-                System.out.println("======================        QUIZZES                      ======================");
-                System.out.println("==============================================================================");
+                
                 for(int n = 0 ; n<Init.Availablecourses.get(v).getChapters().get(i).getQuizs().size() ; n++ )
                 {
+                    System.out.println("======================        QUIZZES                      ======================");
+                    System.out.println("==============================================================================");
                     System.out.println(  Init.Availablecourses.get(v).getChapters().get(i).getQuizs().get(n).toString());
                 }
                 
