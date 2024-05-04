@@ -102,8 +102,7 @@ public class mainframe2 {
         {
             Remove.setVisible(true);
             Finish.setVisible(true);
-            Name.setText(Init.students.get(Init.accessed_student_index).getUsername());
-            Email.setText(Init.students.get(Init.accessed_student_index).getEmail());
+  
 
             for(int i =0 ; i<Init.Availablecourses.size() ; i++)                                        // print The Init Primary Courses
             {
@@ -146,6 +145,8 @@ public class mainframe2 {
 
     @FXML
     void initialize() {
+        Name.setText(Init.students.get(Init.accessed_student_index).getUsername());
+        Email.setText(Init.students.get(Init.accessed_student_index).getEmail());
         assert Add != null : "fx:id=\"Add\" was not injected: check your FXML file 'mainframe2.fxml'.";
         assert Available_Courses != null : "fx:id=\"Available_Courses\" was not injected: check your FXML file 'mainframe2.fxml'.";
         assert Courses_Enrolled != null : "fx:id=\"Courses_Enrolled\" was not injected: check your FXML file 'mainframe2.fxml'.";

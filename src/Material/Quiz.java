@@ -9,7 +9,10 @@ public class Quiz {
     private ArrayList<String> questions = new ArrayList<String>();
     private ArrayList<String> answers = new ArrayList<String>();
 
-    public Quiz(Chapter c) {
+    public Quiz(String Q , String A ,Chapter c) {      
+        this.questions.add(Q);                         
+        this.answers.add(A);                           
+
         this.chapter = c;
         course = c.getCourse();
         try {
@@ -52,7 +55,8 @@ public class Quiz {
     @Override
     public String toString() {
         return ("Quiz: " + this.quiz_num + "\n" +
-                "Questions: " + this.questions.size() + "\n" +
+                "Questions: " + this.questions + "\n" +
+                "Answers: " + this.answers + "\n" +
                 "Chapter: " + this.chapter + "\n" +
                 "Course: " + this.course + "\n" +
                 "");

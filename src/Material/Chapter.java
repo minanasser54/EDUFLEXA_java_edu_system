@@ -51,8 +51,8 @@ public class Chapter {
         lessons.remove(e);
     }
 
-    public void addQuiz() {
-        Quiz q = new Quiz(this);
+    public void addQuiz(String Q , String A) {       
+        Quiz q = new Quiz(Q,A,this);                
         quizs.add(q);
     }
 

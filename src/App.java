@@ -159,6 +159,7 @@ public class App extends Application {
 
         I.set_Init_Students();
         I.set_Init_Courses();
+        I.set_Init_Mentors();
 
 
         launch(args);
