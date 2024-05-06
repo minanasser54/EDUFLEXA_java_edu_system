@@ -6,18 +6,31 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Current File",
+            "name": "App",
             "request": "launch",
-            "mainClass": "${file}"
-            ,"vmArgs": "--module-path F:/programfiles/javafx-sdk-23/lib  --add-modules javafx.controls,javafx.fxml",
-
+            "mainClass": "App",
+            "projectName": "EDUFLEXA_java_edu_system_e00126b1"
         },
         {
             "type": "java",
             "name": "App",
             "request": "launch",
             "mainClass": "App",
-            "projectName": "EDUFLEXA_58cfe161"
+            "projectName": "EDUFLEXA_86917bf1"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "vmArgs": "--module-path D:/javafx-sdk-23/javafx-sdk-23/lib --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "App",
+            "projectName": "EDUFLEXA_2aba6c37"
         }
     ]
 }

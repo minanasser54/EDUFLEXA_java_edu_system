@@ -93,12 +93,12 @@
                   <Image url="@../../LOGO.png" />
                </image>
             </ImageView>
-            <Text fx:id="Name" fill="#0011ff" layoutX="284.0" layoutY="49.0" stroke="#df2a2a" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="406.136688232422">
+            <Text fx:id="Name" fill="#0011ff" layoutX="284.0" layoutY="49.0" stroke="#df2a2a" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="406.136688232422">
                <font>
                   <Font size="27.0" />
                </font>
             </Text>
-            <Text fx:id="Email" fill="#2200ff" layoutX="294.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="406.1366882324219">
+            <Text fx:id="Email" fill="#2200ff" layoutX="294.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="406.1366882324219">
                <font>
                   <Font size="27.0" />
                </font>
@@ -118,6 +118,11 @@
             <Button fx:id="Add" layoutX="530.0" layoutY="485.0" mnemonicParsing="false" onMouseClicked="#AddCourses" prefHeight="26.0" prefWidth="70.0" text="Show" />
             <Button fx:id="Remove" layoutX="128.0" layoutY="485.0" mnemonicParsing="false" onMouseClicked="#RemoveCourse" prefHeight="26.0" prefWidth="70.0" text="Remove" visible="false" />
             <Button fx:id="Finish" layoutX="317.0" layoutY="498.0" mnemonicParsing="false" onMouseClicked="#Finish" prefHeight="43.0" prefWidth="82.0" text="Finish" visible="false" />
+            <Text layoutX="14.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elevate Your Learning Experience" textAlignment="CENTER" wrappingWidth="334.4000122070313">
+               <font>
+                  <Font name="Arial Italic" size="20.0" />
+               </font>
+            </Text>
          </children>
     </AnchorPane>
   </children>

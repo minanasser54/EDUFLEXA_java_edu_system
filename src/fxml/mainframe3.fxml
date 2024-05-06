@@ -113,12 +113,12 @@
                </font>
             </Text>
             <TextField fx:id="Password" layoutX="429.0" layoutY="218.0" prefHeight="38.0" prefWidth="175.0" promptText="Create Password" />
-            <Text fill="#001eff" layoutX="429.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign up" wrappingWidth="124.5367431640625">
+            <Text fill="#001eff" layoutX="443.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign up" textAlignment="CENTER" wrappingWidth="124.5367431640625">
                <font>
                   <Font name="Arial Italic" size="29.0" />
                </font>
             </Text>
-            <Text layoutX="343.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Learn on your own time  " textAlignment="CENTER" wrappingWidth="295.9999877929688">
+            <Text layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elevate Your Learning Experience" textAlignment="CENTER" wrappingWidth="365.5999633789063">
                <font>
                   <Font name="Arial Italic" size="20.0" />
                </font>

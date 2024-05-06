@@ -157,6 +157,10 @@ public class Course implements Comparable<Course>, enrolable {
         }
     }
 
+    public void removeChapters(Chapter c) {            //added by me
+        this.chapters.remove(c);
+    }
+
     public void addChapters(ArrayList<Chapter> c) {
         try {
             this.chapters.addAll(c);

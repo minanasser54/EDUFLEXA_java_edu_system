@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="693.0" prefWidth="863.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.mainframe4">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="836.0" prefWidth="863.0" VBox.vgrow="ALWAYS">
+      <children>
+            <ImageView fitHeight="66.0" fitWidth="307.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../LOGO.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="14.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elevate Your Learning Experience" textAlignment="CENTER" wrappingWidth="334.4000122070313">
+               <font>
+                  <Font name="Arial Italic" size="20.0" />
+               </font>
+            </Text>
+            <Text layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elevate Your Learning Experience" textAlignment="CENTER" visible="false" wrappingWidth="63.200000000000045">
+               <font>
+                  <Font name="Arial Italic" size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="374.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creat Course" textAlignment="CENTER" wrappingWidth="421.65740966796875">
+               <font>
+                  <Font size="46.0" />
+               </font>
+            </Text>
+            <Text layoutX="8.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" textAlignment="CENTER" wrappingWidth="189.33676147460938">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <Text layoutX="8.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code" textAlignment="CENTER" wrappingWidth="189.33676147460926">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <TextField fx:id="Course_Title" layoutX="246.0" layoutY="123.0" prefWidth="206.0" />
+            <Text layoutX="8.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" textAlignment="CENTER" wrappingWidth="189.33676147460926">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <Text layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Week Duration" textAlignment="CENTER" wrappingWidth="206.136749267578">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <Text layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Outcomes" textAlignment="CENTER" wrappingWidth="206.136749267578">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <TextField fx:id="Course_Code" layoutX="246.0" layoutY="178.0" prefHeight="26.0" prefWidth="206.0" />
+            <TextField fx:id="Course_Price" layoutX="246.0" layoutY="229.0" prefHeight="26.0" prefWidth="206.0" />
+            <TextField fx:id="Course_Duration" layoutX="246.0" layoutY="281.0" prefHeight="26.0" prefWidth="206.0" />
+            <TextField fx:id="Course_Outcomes" layoutX="246.0" layoutY="330.0" prefHeight="26.0" prefWidth="206.0" />
+            <ListView fx:id="Chapter_List" layoutX="612.0" layoutY="121.0" prefHeight="200.0" prefWidth="200.0" />
+            <Text layoutX="617.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chapter Title" textAlignment="CENTER" wrappingWidth="189.33676147460938">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <TextField fx:id="Add_Chapter_Title" layoutX="574.0" layoutY="330.0" promptText="Chapter Title" />
+            <Button fx:id="Btn_Chapter" layoutX="756.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#Add_chapter" prefHeight="26.0" prefWidth="63.0" text="Add " />
+            <Button fx:id="Finish" layoutX="382.0" layoutY="643.0" mnemonicParsing="false" onMouseClicked="#Finish" prefHeight="50.0" prefWidth="98.0" text="Finish" />
+            <ListView fx:id="Lesson_List" layoutX="14.0" layoutY="469.0" prefHeight="200.0" prefWidth="200.0" />
+            <Text layoutX="19.0" layoutY="451.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lessons" textAlignment="CENTER" wrappingWidth="189.33676147460938">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <TextField fx:id="Lesson_URL" layoutX="230.0" layoutY="574.0" promptText="Video_URL" />
+            <Button fx:id="Btn_Lesson" layoutX="230.0" layoutY="610.0" mnemonicParsing="false" onMouseClicked="#Add_Lesson" prefHeight="26.0" prefWidth="63.0" text="Add" />
+            <ListView fx:id="Quiz_List" layoutX="615.0" layoutY="474.0" prefHeight="200.0" prefWidth="200.0" />
+            <Text layoutX="620.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quiz" textAlignment="CENTER" wrappingWidth="189.33676147460938">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <TextField fx:id="Quiz_Answers" layoutX="463.0" layoutY="574.0" promptText="Answers" />
+            <Button fx:id="Btn_Quiz" layoutX="542.0" layoutY="610.0" mnemonicParsing="false" onMouseClicked="#Add_Quiz" prefHeight="26.0" prefWidth="63.0" text="Add" />
+            <ChoiceBox fx:id="Select_Chapter" layoutX="356.0" layoutY="474.0" onMouseClicked="#Change_Lesson_Quiz_List" prefWidth="150.0" />
+            <Button fx:id="Btn_Course" layoutX="246.0" layoutY="371.0" mnemonicParsing="false" onMouseClicked="#Add_Course" prefHeight="26.0" prefWidth="206.0" text="Add" />
+            <ChoiceBox fx:id="Select_Course" layoutX="573.0" layoutY="371.0" onMouseClicked="#Change_Chapter_List" prefWidth="150.0" />
+            <Button fx:id="Btn_Chapter_remove" layoutX="756.0" layoutY="370.0" mnemonicParsing="false" onMouseClicked="#Chapter_remove" prefHeight="26.0" prefWidth="63.0" text="Remove" />
+            <TextField fx:id="Lesson_Text" layoutX="230.0" layoutY="533.0" promptText="Text" />
+            <TextField fx:id="Quiz_Questions" layoutX="463.0" layoutY="533.0" promptText="Questions" />
+            <Button fx:id="Btn_Lesson1" layoutX="229.0" layoutY="647.0" mnemonicParsing="false" onMouseClicked="#Remove_Lesson" prefHeight="26.0" prefWidth="63.0" text="Remove" />
+            <Button fx:id="Btn_Lesson2" layoutX="541.0" layoutY="645.0" mnemonicParsing="false" onMouseClicked="#Remove_Quiz" prefHeight="26.0" prefWidth="63.0" text="Remove" />
+            <Text layoutX="526.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Courses" />
+            <Text layoutX="300.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chapters" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
