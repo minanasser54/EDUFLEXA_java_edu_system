@@ -1,4 +1,5 @@
 
+
 import Utility.Init;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -158,6 +159,7 @@ public class App extends Application {
 
         I.set_Init_Students();
         I.set_Init_Courses();
+        I.set_Init_Mentors();
 
 
         launch(args);
