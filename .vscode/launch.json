@@ -6,10 +6,12 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Current File",
+            "name": "App",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "App",
+            "projectName": "EDUFLEXA_86917bf1"
         },
+    
         {
             "type": "java",
             "name": "App",

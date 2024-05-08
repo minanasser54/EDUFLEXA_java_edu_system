@@ -28,11 +28,23 @@ public class Lesson {
     }
 
     public String getVideo_url() {
-        return video_url;
+        try {
+            return video_url;
+        } catch (NullPointerException e) {
+            System.out.println("Video URL is not initialized");
+            return null;
+        }
     }
 
     public void setVideo_url(String video_url) {
-        this.video_url = video_url;
+        try {
+            if (video_url == null || video_url.isEmpty()) {
+                throw new IllegalArgumentException("Video URL cannot be null or empty");
+            }
+            this.video_url = video_url;
+        } catch (IllegalArgumentException e) {
+            System.out.println("Invalid argument for video URL");
+        }
     }
 
     public Chapter getChapter() {

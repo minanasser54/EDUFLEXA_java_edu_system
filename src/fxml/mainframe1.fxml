@@ -46,7 +46,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.mainframe1">
+<VBox prefHeight="537.0" prefWidth="722.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.mainframe1">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -87,32 +87,42 @@
         </Menu>
       </menus>
     </MenuBar>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="430.0" prefWidth="676.0" VBox.vgrow="ALWAYS">
       <children>
             <ImageView fitHeight="66.0" fitWidth="307.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../LOGO.png" />
                </image>
             </ImageView>
-            <Text layoutX="14.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name" textAlignment="CENTER" wrappingWidth="194.13671875">
+            <Text layoutX="8.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name" textAlignment="CENTER" wrappingWidth="194.13671875">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
-            <TextField fx:id="usernameField" layoutX="283.0" layoutY="73.0" prefHeight="40.0" prefWidth="230.0" />
-            <Text layoutX="14.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" textAlignment="CENTER" wrappingWidth="194.13671875">
+            <TextField fx:id="usernameField" layoutX="464.0" layoutY="113.0" prefHeight="40.0" prefWidth="230.0" />
+            <Text layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" textAlignment="CENTER" wrappingWidth="194.13671875">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
-            <Button layoutX="410.0" layoutY="174.0" mnemonicParsing="false" onMouseClicked="#Enter" prefHeight="15.0" prefWidth="94.0" text="OK" />
-            <Button layoutX="457.0" layoutY="314.0" mnemonicParsing="false" onMouseClicked="#NewAccount" prefHeight="26.0" prefWidth="155.0" text="Sign up" />
-            <Text layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New to EDUFLEXA" textAlignment="CENTER" wrappingWidth="307.0">
+            <Button layoutX="591.0" layoutY="254.0" mnemonicParsing="false" onMouseClicked="#Enter" prefHeight="15.0" prefWidth="94.0" text="Log in" />
+            <Button fx:id="Sign_up" layoutX="474.0" layoutY="408.0" mnemonicParsing="false" onMouseClicked="#NewAccount" prefHeight="26.0" prefWidth="155.0" text="Sign up" />
+            <Text layoutX="398.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don’t have an account " textAlignment="CENTER" wrappingWidth="307.0">
                <font>
-                  <Font size="30.0" />
+                  <Font name="Arial Narrow" size="30.0" />
                </font>
             </Text>
-            <PasswordField fx:id="HiddenPassword" layoutX="283.0" layoutY="125.0" prefHeight="40.0" prefWidth="230.0" />
+            <PasswordField fx:id="HiddenPassword" layoutX="464.0" layoutY="178.0" prefHeight="40.0" prefWidth="230.0" />
+            <Text fx:id="Mismatch" fill="RED" layoutX="76.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wrong Username or Password" textAlignment="CENTER" visible="false" wrappingWidth="461.39996337890625">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Text>
+            <Text layoutX="8.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Elevate Your Learning Experience" textAlignment="CENTER" wrappingWidth="334.4000122070313">
+               <font>
+                  <Font name="Arial Italic" size="20.0" />
+               </font>
+            </Text>
       </children>
     </AnchorPane>
   </children>
