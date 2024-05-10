@@ -1,12 +1,15 @@
 package Controllers;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import Material.Course;
 import Utility.Init;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
@@ -46,6 +49,12 @@ public class mainframe2 {
     @FXML
     private Text text1;
 
+    @FXML
+    private ListView<String> Sort_L;
+
+    
+    @FXML
+    private ChoiceBox<String> Sort_Choice;
 
     @FXML
     
@@ -75,8 +84,6 @@ public class mainframe2 {
             {            
                 if ((Init.students.get(Init.accessed_student_index).getEnrolledcourses().get(i).getTitle() ).equals(Courses_Enrolled.getItems().get(selectID)) )
                 {
-                    //.getEnrolledcourses().remove(());
-                   // Init.students.get(Init.accessed_student_index).getEnrolledcourses().get(i).unenroll(Init.students.get(Init.accessed_student_index));
                     Init.students.get(Init.accessed_student_index).removeEnrolledcourses(Init.students.get(Init.accessed_student_index).getEnrolledcourses().get(i));
 
                     //Remove it from Courses enrolledcourses in the Init
@@ -99,13 +106,12 @@ public class mainframe2 {
     @FXML
     void AddCourses(MouseEvent event) {
         ClickCount += event.getClickCount();
-
+     
         if (ClickCount == 1)
         {
             Remove.setVisible(true);
             Finish.setVisible(true);
-            Name.setText(Init.students.get(Init.accessed_student_index).getUsername());
-            Email.setText(Init.students.get(Init.accessed_student_index).getEmail());
+  
 
             for(int i =0 ; i<Init.Availablecourses.size() ; i++)                                        // print The Init Primary Courses
             {
@@ -113,8 +119,8 @@ public class mainframe2 {
                 Available_Courses.getItems().add(Init.Availablecourses.get(i).getTitle());
                 System.out.println("===================================");
             }
-            System.out.println(Init.students.get(Init.accessed_student_index).getNo_Courses());
-            for(int j = 0 ; j<(Init.students.get(Init.accessed_student_index).getNo_Courses()) ; j++)   //print what student have enrolled before
+            
+            for(int j = 0 ; j<Init.students.get(Init.accessed_student_index).getNo_Courses() ; j++)   //print what student have enrolled before
             {
                 Courses_Enrolled.getItems().add(Init.students.get(Init.accessed_student_index).getEnrolledcourses().get(j).getTitle()); 
             }
@@ -132,9 +138,7 @@ public class mainframe2 {
             {            
                 if ((Init.Availablecourses.get(i).getTitle() ).equals(Init.Availablecourses.get(selectID).getTitle()) )
                 {
-                   // Init.students.get(Init.accessed_student_index).getEnrolledcourses().get(i).enroll(Init.students.get(Init.accessed_student_index));
                     Init.students.get(Init.accessed_student_index).setEnrolledcourses(Init.Availablecourses.get(i));
-                    //Init.students.get(Init.accessed_student_index).setEnrolledcourses(Init.Availablecourses.get(i));
                     break;
                 }
      
@@ -148,8 +152,90 @@ public class mainframe2 {
 
     }
 
+
+    @FXML
+    void Sort(MouseEvent event) {
+        Sort_L.getItems().clear();
+        Available_Courses.getItems().clear();
+        Sort_Choice.setOnAction(e -> 
+        {
+            if (Sort_Choice.getValue() == "Title")
+            {
+                Init.Availablecourses = Course.sortCourses(Init.Availablecourses,'t');
+                for(int i =0 ; i<Init.Availablecourses.size() ; i++)                                     
+                {
+                    System.out.println(Init.Availablecourses.get(i).getTitle());
+                    Available_Courses.getItems().add(Init.Availablecourses.get(i).getTitle());
+                    Sort_L.getItems().add(Init.Availablecourses.get(i).getTitle());
+                    System.out.println("===================================");
+                }
+            }
+            else if (Sort_Choice.getValue() == "Price")
+            {
+                Init.Availablecourses = Course.sortCourses(Init.Availablecourses,'p');
+                for(int i =0 ; i<Init.Availablecourses.size() ; i++)                                     
+                {
+                    System.out.println(Init.Availablecourses.get(i).getTitle());
+                    Available_Courses.getItems().add(Init.Availablecourses.get(i).getTitle());
+                    Sort_L.getItems().add(String.valueOf(Init.Availablecourses.get(i).getPrice()));
+                    System.out.println("===================================");
+                }
+            }
+            else if (Sort_Choice.getValue() == "Week Duration")
+            {
+                Init.Availablecourses = Course.sortCourses(Init.Availablecourses,'d');
+                for(int i =0 ; i<Init.Availablecourses.size() ; i++)                                     
+                {
+                    System.out.println(Init.Availablecourses.get(i).getTitle());
+                    Available_Courses.getItems().add(Init.Availablecourses.get(i).getTitle());
+                    Sort_L.getItems().add(String.valueOf(Init.Availablecourses.get(i).getWeek_duration()));
+                    System.out.println("===================================");
+                }
+            }
+            else if (Sort_Choice.getValue() == "Number of Chapters")
+            {
+                Init.Availablecourses = Course.sortCourses(Init.Availablecourses,'c');
+                for(int i =0 ; i<Init.Availablecourses.size() ; i++)                                     
+                {
+                    System.out.println(Init.Availablecourses.get(i).getTitle());
+                    Available_Courses.getItems().add(Init.Availablecourses.get(i).getTitle());
+                    Sort_L.getItems().add(String.valueOf(Init.Availablecourses.get(i).chaptersCount()));
+                    System.out.println("===================================");
+                }
+            }
+            else if (Sort_Choice.getValue() == "Number of Students")
+            {
+                Init.Availablecourses = Course.sortCourses(Init.Availablecourses,'s');
+                for(int i =0 ; i<Init.Availablecourses.size() ; i++)                                     
+                {
+                    System.out.println(Init.Availablecourses.get(i).getTitle());
+                    Available_Courses.getItems().add(Init.Availablecourses.get(i).getTitle());
+                    Sort_L.getItems().add(String.valueOf(Init.Availablecourses.get(i).studentsCount()));
+                    System.out.println("===================================");
+                }
+            }
+            else 
+            {
+                Init.Availablecourses = Course.sortCourses(Init.Availablecourses,'q');
+                for(int i =0 ; i<Init.Availablecourses.size() ; i++)                                     
+                {
+                    System.out.println(Init.Availablecourses.get(i).getTitle());
+                    Available_Courses.getItems().add(Init.Availablecourses.get(i).getTitle());
+                    Sort_L.getItems().add(String.valueOf(Init.Availablecourses.get(i).getCode()));
+                    System.out.println("===================================");
+                }
+            }
+      
+        });
+
+    }
+
     @FXML
     void initialize() {
+        Name.setText(Init.students.get(Init.accessed_student_index).getUsername());
+        Email.setText(Init.students.get(Init.accessed_student_index).getEmail());
+        Sort_Choice.getItems().addAll("Title","Price","Week Duration","Number of Chapters","Number of Students","Code");
+        Sort_Choice.setValue("Title");        
         assert Add != null : "fx:id=\"Add\" was not injected: check your FXML file 'mainframe2.fxml'.";
         assert Available_Courses != null : "fx:id=\"Available_Courses\" was not injected: check your FXML file 'mainframe2.fxml'.";
         assert Courses_Enrolled != null : "fx:id=\"Courses_Enrolled\" was not injected: check your FXML file 'mainframe2.fxml'.";

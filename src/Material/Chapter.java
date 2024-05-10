@@ -74,9 +74,10 @@ public class Chapter {
         }
     }
 
-    public void addQuiz() {
+    public void addQuiz(String Q , String A) {       
         try {
             Quiz q = new Quiz(this);
+            q.addQuestion(Q, A);
             quizs.add(q);
         } catch (NullPointerException en) {
             System.out.println("Quizzes is not initialized");

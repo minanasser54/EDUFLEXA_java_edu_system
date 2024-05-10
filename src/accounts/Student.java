@@ -22,12 +22,12 @@ public class Student extends User {
     }
 
     public void setEnrolledcourses(Course c) { // added by me
-        c.enroll(this);
+        enrolledcourses.add(c);
         System.out.println("done");
     }
 
     public void removeEnrolledcourses(Course c) { // added by me
-        c.unenroll(this);
+        enrolledcourses.remove(c);
     }
 
     public int getNo_Courses() { // added by me
