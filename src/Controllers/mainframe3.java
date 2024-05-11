@@ -4,6 +4,7 @@ import Utility.Init;
 import accounts.Student;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -42,7 +43,8 @@ public class mainframe3 {
 
     @FXML
     void Add_new_Student(MouseEvent event) {
-        String gender = null ;
+        try {
+            String gender = null ;
         if (Gender.getSelectedToggle().equals(Male))
         {
             gender = "Male";
@@ -51,8 +53,6 @@ public class mainframe3 {
         {
             gender = "Female";
         }
-        
-
             for(int i =0 ; i<Init.students.size() ; i++)                                     
             {
                 if (  (Init.students.get(i).getUsername()).equals(UserName.getText()) ||  (Init.students.get(i).getPassword()).equals(Password.getText())   ||  (Init.students.get(i).getEmail()).equals(email.getText())     )
@@ -64,18 +64,22 @@ public class mainframe3 {
                 {
                     ExistedAccountMessage.setVisible(false);
                     Init.students.add(new Student(i, UserName.getText(), email.getText(), Password.getText(), gender));
-
                     Node source = (Node) event.getSource();
                     Stage stage = (Stage) source.getScene().getWindow();
                     stage.close();       
-
                 }
             }
-
-   
-            
- 
-
+        } catch (Exception e) {
+        showAlert(e);
+            }
+        
+    }
+    void showAlert(Exception e) { 
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("INVALID DATA");
+        alert.setHeaderText("Look, Data Must Be Like");
+        alert.setContentText("email with @  // pass > 8 // gender is a  must"+e.toString());
+        alert.showAndWait();
     }
 
 }
